@@ -11,10 +11,10 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="700.0" minWidth="900.0" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.prevention.controller.MainController">
-    <BorderPane prefHeight="700.0" prefWidth="900.0">
+<AnchorPane minHeight="700.0" minWidth="900.0" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.prevention.controller.MainController">
+    <BorderPane prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <top>
-            <VBox prefHeight="90.0" prefWidth="991.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="90.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                 <MenuBar>
                     <Menu mnemonicParsing="false" text="Arquivo">
                         <MenuItem mnemonicParsing="false" text="Sair" />

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="450.0" minWidth="500.0" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.prevention.controller.PatientController">
+<AnchorPane minHeight="450.0" minWidth="500.0" prefHeight="450.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.prevention.controller.PatientEditController">
     <BorderPane prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <center>
             <VBox spacing="5.0" BorderPane.alignment="CENTER">
@@ -47,8 +47,8 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Button minWidth="100.0" mnemonicParsing="false" text="Salvar" />
-                  <Button minWidth="100.0" mnemonicParsing="false" text="Cancelar" />
+                  <Button minWidth="100.0" mnemonicParsing="false" onAction="#onClickSaveButton" text="Salvar" />
+                  <Button minWidth="100.0" mnemonicParsing="false" onAction="#onClickCancelButton" text="Cancelar" />
                </children>
                <padding>
                   <Insets top="10.0" />

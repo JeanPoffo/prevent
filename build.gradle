@@ -32,13 +32,13 @@ kotlin {
 }
 
 javafx {
-    version = '21'
+    version = '22'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
-    implementation('org.controlsfx:controlsfx:11.2.1')
-
+    implementation("ch.qos.logback:logback-classic:1.5.8")
+    implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("org.xerial:sqlite-jdbc:3.46.1.0")
     implementation("org.jetbrains.exposed:exposed-core:0.54.0")
     implementation("org.jetbrains.exposed:exposed-dao:0.54.0")

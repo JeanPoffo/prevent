@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty
 import javafx.beans.property.StringProperty
 
 data class Patient(
+    val id: Int? = null,
     val cpf: StringProperty,
     val name: StringProperty,
     val birthDate: SimpleObjectProperty<LocalDate>,
@@ -15,6 +16,7 @@ data class Patient(
     val susNumber: StringProperty,
 ) {
     constructor(
+        id: Int? = null,
         cpf: String,
         name: String,
         birthDate: LocalDate,
@@ -23,6 +25,7 @@ data class Patient(
         city: String,
         susNumber: String
     ) : this(
+        id = id,
         SimpleStringProperty(cpf),
         SimpleStringProperty(name),
         SimpleObjectProperty<LocalDate>(birthDate),
