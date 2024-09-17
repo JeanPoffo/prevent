@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact name="prevention:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/prevention_jar2</output-path>
+    <root id="root">
+      <element id="archive" name="prevention.jar">
+        <element id="module-output" name="prevention.main" />
+      </element>
+      <element id="library" level="project" name="Gradle: org.controlsfx:controlsfx:11.2.1" />
+      <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:2.0.15" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:22" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.exposed:exposed-java-time:0.54.0" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:22" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.exposed:exposed-core:0.54.0" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-fxml:linux:22" />
+      <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.5.8" />
+      <element id="library" level="project" name="Gradle: org.jetbrains:annotations:23.0.0" />
+      <element id="library" level="project" name="Gradle: org.xerial:sqlite-jdbc:3.46.1.0" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-controls:linux:22" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:2.0.0" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.exposed:exposed-jdbc:0.54.0" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-graphics:linux:22" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.0.0" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.exposed:exposed-dao:0.54.0" />
+      <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.5.8" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:linux:22" />
+      <element id="library" level="project" name="Gradle: org.openjfx:javafx-base:22" />
+    </root>
+  </artifact>
+</component>

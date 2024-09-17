@@ -45,15 +45,17 @@ class PatientController: Initializable {
 
     @FXML
     private fun onClickDeleteButton() {
-        if (questionMessage("Excluir Paciente", "Deseja realmente excluir o paciente selecionado?")) {
-            val patient = patientTable.selectionModel.selectedItem
+        val patient = patientTable.selectionModel.selectedItem
 
-            if (patient != null) {
+        if (patient != null) {
+            if (questionMessage("Excluir Paciente", "Deseja realmente excluir o paciente selecionado?")) {
                 transaction { PatientDao.delete(patient) }
                 refreshTableData()
 
                 informationMessage("Excluir Paciente", "Paciente excluído com sucesso!")
             }
+        } else {
+            informationMessage("Excluir Paciente", "Selecione um paciente para excluir.")
         }
     }
 
