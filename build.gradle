@@ -56,3 +56,19 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:0.54.0")
     implementation("org.jetbrains.exposed:exposed-java-time:0.54.0")
 }
+
+test {
+    useJUnitPlatform()
+}
+
+jlink {
+    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'app'
+    }
+}
+
+jlinkZip {
+    group = 'distribution'
+}

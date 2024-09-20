@@ -57,7 +57,7 @@ fun PatientDao.update(patient: Patient) = transaction {
 
 fun PatientDao.delete(patient: Patient) = transaction {
     if (patient.id != null) {
-        this@delete.deleteWhere { id eq patient.id }
+        this@delete.deleteWhere { PatientDao.id eq patient.id }
     } else {
         error("Missing Patient ID")
     }

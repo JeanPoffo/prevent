@@ -23,15 +23,15 @@ data class Patient(
         address: String,
         neighborhood: String,
         city: String,
-        susNumber: String
+        susNumber: String,
     ) : this(
-        id = id,
+        id,
         SimpleStringProperty(cpf),
         SimpleStringProperty(name),
         SimpleObjectProperty<LocalDate>(birthDate),
         SimpleStringProperty(address),
         SimpleStringProperty(neighborhood),
         SimpleStringProperty(city),
-        SimpleStringProperty(susNumber)
+        SimpleStringProperty(susNumber),
     )
 }

@@ -11,4 +11,10 @@ class MainController {
         val (stage) = loadView("/com/app/prevention/patient-view.fxml", "Pacientes")
         stage.showAndResize()
     }
+
+    @FXML
+    fun onClickScheduleButton() {
+        val (stage) = loadView("/com/app/prevention/schedule-view.fxml", "Horários")
+        stage.showAndResize()
+    }
 }

@@ -7,7 +7,6 @@ import com.app.prevention.model.Patient
 import com.app.prevention.util.informationMessage
 import com.app.prevention.util.loadView
 import com.app.prevention.util.questionMessage
-import com.app.prevention.util.showAndResize
 import com.app.prevention.util.showWaitAndResize
 import java.net.URL
 import java.util.ResourceBundle
