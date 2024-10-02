@@ -13,8 +13,8 @@ class MainController {
     }
 
     @FXML
-    fun onClickScheduleButton() {
-        val (stage) = loadView("/com/app/prevention/schedule-view.fxml", "Horários")
+    fun onClickBoardingButton() {
+        val (stage) = loadView("/com/app/prevention/boarding-view.fxml", "Embarques")
         stage.showAndResize()
     }
 }
