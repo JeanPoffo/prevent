@@ -1,23 +1,21 @@
 package com.app.prevention.controller
 
-import com.app.prevention.dao.PatientDao
-import com.app.prevention.dao.delete
-import com.app.prevention.dao.toPatientModel
 import com.app.prevention.model.Patient
+import com.app.prevention.persistence.repository.PatientRepository
 import com.app.prevention.util.informationMessage
 import com.app.prevention.util.loadView
 import com.app.prevention.util.questionMessage
-import com.app.prevention.util.showWaitAndResize
+import com.app.prevention.util.showAndResize
 import java.net.URL
 import java.util.ResourceBundle
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
-import org.jetbrains.exposed.sql.selectAll
-import org.jetbrains.exposed.sql.transactions.transaction
 
 class PatientController: Initializable {
+
+    private val repository: PatientRepository = PatientRepository()
 
     @FXML
     private lateinit var patientTable: TableView<Patient>
@@ -48,7 +46,8 @@ class PatientController: Initializable {
 
         if (patient != null) {
             if (questionMessage("Excluir Paciente", "Deseja realmente excluir o paciente selecionado?")) {
-                transaction { PatientDao.delete(patient) }
+                repository.delete(patient)
+
                 refreshTableData()
 
                 informationMessage("Excluir Paciente", "Paciente excluído com sucesso!")
@@ -70,7 +69,7 @@ class PatientController: Initializable {
 
     private fun refreshTableData() {
         patientTable.items.clear()
-        patientTable.items.addAll(transaction { PatientDao.selectAll().map { it.toPatientModel() } })
+        patientTable.items.addAll(repository.findAll())
     }
 
     private fun loadPatientEditView(patient: Patient? = null) {
@@ -80,6 +79,6 @@ class PatientController: Initializable {
         controller.setPatient(patient)
         controller.setCallback { refreshTableData() }
 
-        stage.showWaitAndResize()
+        stage.showAndResize()
     }
 }

@@ -1,12 +1,13 @@
 package com.app.prevention.model
 
 import java.time.LocalDate
+import java.util.UUID
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.beans.property.StringProperty
 
 data class Patient(
-    val id: Int? = null,
+    val id: UUID?,
     val cpf: StringProperty,
     val name: StringProperty,
     val birthDate: SimpleObjectProperty<LocalDate>,
@@ -16,7 +17,7 @@ data class Patient(
     val susNumber: StringProperty,
 ) {
     constructor(
-        id: Int? = null,
+        id: UUID?,
         cpf: String,
         name: String,
         birthDate: LocalDate,
@@ -34,4 +35,6 @@ data class Patient(
         SimpleStringProperty(city),
         SimpleStringProperty(susNumber),
     )
+
+    override fun toString(): String = name.value
 }
