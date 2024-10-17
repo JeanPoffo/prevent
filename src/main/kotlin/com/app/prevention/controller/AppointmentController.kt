@@ -2,6 +2,10 @@ package com.app.prevention.controller
 
 import com.app.prevention.model.Appointment
 import com.app.prevention.model.AppointmentPeriod
+import com.app.prevention.persistence.repository.AppointmentRepository
+import com.app.prevention.util.informationMessage
+import com.app.prevention.util.loadView
+import com.app.prevention.util.showAndResize
 import java.net.URL
 import java.time.LocalDate
 import java.util.ResourceBundle
@@ -11,6 +15,8 @@ import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 
 class AppointmentController: Initializable {
+
+    private val repository: AppointmentRepository = AppointmentRepository()
 
     @FXML
     lateinit var appointmentTable: TableView<Appointment>
@@ -31,18 +37,32 @@ class AppointmentController: Initializable {
     lateinit var periodColumn: TableColumn<Appointment, AppointmentPeriod>
 
     @FXML
-    fun onClickAddButton() {
-        println("GO")
-    }
+    fun onClickAddButton() { loadAppointmentEditView() }
 
     @FXML
     fun onClickEditButton() {
-        println("GO")
+        val appointment = appointmentTable.selectionModel.selectedItem
+
+        if (appointment != null) {
+            loadAppointmentEditView(appointment)
+        } else {
+            informationMessage("Editar Consulta", "Selecione uma consulta para editar.")
+        }
     }
 
     @FXML
     fun onClickDeleteButton() {
-        println("GO")
+        val appointment = appointmentTable.selectionModel.selectedItem
+
+        if (appointment != null) {
+            repository.delete(appointment)
+
+            refreshTableData()
+
+            informationMessage("Excluir Consulta", "Consulta excluída com sucesso!")
+        } else {
+            informationMessage("Excluir Consulta", "Selecione uma consulta para excluir.")
+        }
     }
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
@@ -60,8 +80,16 @@ class AppointmentController: Initializable {
 
     private fun refreshTableData() {
         appointmentTable.items.clear()
-        appointmentTable.items.addAll(
+        appointmentTable.items.addAll(repository.findAll())
+    }
 
-        )
+    private fun loadAppointmentEditView(appointment: Appointment? = null) {
+        val (stage, loader) = loadView("/com/app/prevention/appointment-edit-view.fxml", "Adicionar")
+
+        val controller = loader.getController<AppointmentEditController>()
+        controller.setAppointment(appointment)
+        controller.setCallback { refreshTableData() }
+
+        stage.showAndResize()
     }
 }

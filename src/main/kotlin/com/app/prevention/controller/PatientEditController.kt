@@ -56,6 +56,9 @@ class PatientEditController {
             repository.save(patientToDatabase)
             informationMessage("Editar Paciente", "Paciente inserido com sucesso!")
         }
+
+        callback()
+        cpfField.scene.window.hide()
     }
 
     @FXML

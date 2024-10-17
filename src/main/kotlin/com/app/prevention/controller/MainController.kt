@@ -14,7 +14,7 @@ class MainController {
 
     @FXML
     fun onClickBoardingButton() {
-        val (stage) = loadView("/com/app/prevention/boarding-view.fxml", "Embarques")
+        val (stage) = loadView("/com/app/prevention/appointment-view.fxml", "Consultas")
         stage.showAndResize()
     }
 }

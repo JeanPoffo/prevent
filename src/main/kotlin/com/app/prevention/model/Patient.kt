@@ -35,4 +35,6 @@ data class Patient(
         SimpleStringProperty(city),
         SimpleStringProperty(susNumber),
     )
+
+    override fun toString(): String = name.value
 }

@@ -2,7 +2,6 @@ package com.app.prevention.persistence.repository
 
 import com.app.prevention.model.Patient
 import com.app.prevention.persistence.dao.PatientDao
-import java.util.UUID.randomUUID
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class PatientRepository {
@@ -18,7 +17,7 @@ class PatientRepository {
 
     fun save(patient: Patient) {
         transaction {
-            PatientDao.new(randomUUID()) {
+            PatientDao.new {
                 cpf = patient.cpf.value
                 name = patient.name.value
                 birthDate = patient.birthDate.value
@@ -32,7 +31,7 @@ class PatientRepository {
 
     fun update(patient: Patient) {
         transaction {
-            PatientDao.findById(patient.id!!)!!.let {
+            PatientDao.findByIdAndUpdate(patient.id!!) {
                 it.cpf = patient.cpf.value
                 it.name = patient.name.value
                 it.birthDate = patient.birthDate.value

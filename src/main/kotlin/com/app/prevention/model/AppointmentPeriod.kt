@@ -1,6 +1,8 @@
 package com.app.prevention.model
 
 enum class AppointmentPeriod(val value: String) {
-    MORNING("Verspertino"),
-    AFTERNOON("Matutino"),
+    MORNING("Matutino"),
+    AFTERNOON("Verspertino");
+
+    override fun toString() = value
 }

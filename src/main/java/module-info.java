@@ -4,9 +4,11 @@ module com.app.prevention {
     requires org.controlsfx.controls;
     requires exposed.core;
     requires exposed.java.time;
-    requires org.xerial.sqlitejdbc;
     requires exposed.dao;
+    requires org.xerial.sqlitejdbc;
     requires kotlinx.coroutines.core;
+    requires kotlin.stdlib;
+    requires kotlin.reflect;
 
     opens com.app.prevention to javafx.fxml;
     opens com.app.prevention.controller to javafx.fxml;
